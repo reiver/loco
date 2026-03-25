@@ -6,6 +6,8 @@ import (
 	"codeberg.org/reiver/go-log"
 )
 
+var Help bool
+
 func init() {
 	// Register the logger related flags:
 	//
@@ -21,6 +23,8 @@ func init() {
 	if err := log.DeclareFlags(); nil != err {
 		panic(err)
 	}
+
+	flag.BoolVar(&Help, "help", false, "show help")
 
 	flag.Parse()
 }
